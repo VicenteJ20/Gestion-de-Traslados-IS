@@ -1,0 +1,21 @@
+.History{
+  min-height: 100vh;
+  min-width: 100%;
+  padding: 1rem 0;
+  color: var(--white);
+}
+
+.history-header{
+  line-height: 2;
+}
+
+.history-header > h2{
+  font-size: 2rem;
+}
+
+.grid-history-cards{
+  padding-top: 3.8rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(23rem, 1fr));
+  gap: 1rem;
+}

@@ -1,0 +1,54 @@
+.Navbar{
+  position: fixed;
+  max-width: 23.5rem;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  background-color: var(--blue-grey);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  justify-content: center;
+  transition: all 0.7s linear;
+}
+
+.Navbar.hide-nav{
+  left: -100%;
+}
+
+.title-header-nav > h1{
+  color: var(--white);
+  font-size: 2rem;
+}
+
+.restrictions-div{
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  color: var(--white);
+  font-size: 1.25rem;
+}
+
+.restrictions-div > ul{
+  padding-left: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.btn-toggle{
+  position: fixed;
+  z-index: 2;
+  top: 2rem;
+  left: 2rem;
+  font-size: 2rem;
+  color: var(--white);
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+.btn-toggle.hidden-nav-btn{
+  border: 2px solid var(--dark-orange);
+}

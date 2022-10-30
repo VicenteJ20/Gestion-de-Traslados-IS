@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "method": "Esquina Norte Occidente",
+    "asign": 1,
+    "cost": 250000
+  },
+  {
+    "id": 2,
+    "method": "Mínimos costos",
+    "asign": 2,
+    "cost": 50000
+  },
+  {
+    "id": 3,
+    "method": "Vogel",
+    "asign": 3,
+    "cost": 450000
+  },
+  {
+    "id": 4,
+    "method": "Mínimos costos",
+    "asign": 4,
+    "cost": 150000
+  },
+  {
+    "id": 5,
+    "method": "Vogel",
+    "asign": 5,
+    "cost": 650000
+  },
+  {
+    "id": 6,
+    "method": "Esquina Norte Occidente",
+    "asign": 6,
+    "cost": 250000
+  },
+  {
+    "id": 7,
+    "method": "Mínimos costos",
+    "asign": 7,
+    "cost": 450000
+  },
+  {
+    "id": 8,
+    "method": "Mínimos costos",
+    "asign": 8,
+    "cost": 10000
+  },
+  {
+    "id": 9,
+    "method": "Vogel",
+    "asign": 9,
+    "cost": 375000
+  }
+]

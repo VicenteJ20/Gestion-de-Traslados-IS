@@ -1,0 +1,11 @@
+.ModelView{
+  padding: 2rem 0;
+  color: var(--white)
+}
+
+.title-input{
+  all: unset;
+  color: var(--white);
+  font-weight: 800;
+  font-size: 2rem;
+}

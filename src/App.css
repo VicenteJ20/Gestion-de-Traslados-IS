@@ -1,0 +1,9 @@
+.App{
+  padding: 0 2rem 0 5rem;
+  display: flex;
+  transition: all 0.4s linear;
+}
+
+.App.active-nav{
+  padding-left: 25rem;
+}
