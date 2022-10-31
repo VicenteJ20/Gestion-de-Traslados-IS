@@ -1,9 +1,13 @@
 import { FormFormik } from './Form'
 import '../Styles/Navbar.css'
+import { FaBars } from 'react-icons/fa'
 
-export const Navbar = ({ active }) => {
+export const Navbar = ({ active, setupMenu }) => {
   return (
     <>
+      <button className='btn-toggle' onClick={setupMenu}>
+        <FaBars />
+      </button>
       <section className={`Navbar ${active ? 'hide-nav' : ''}`}>
         <header className='title-header-nav'>
           <h1>Gestión de traslado de productos</h1>

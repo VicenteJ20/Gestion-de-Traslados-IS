@@ -1,6 +1,8 @@
 .ModelView{
-  padding: 2rem 0;
-  color: var(--white)
+  padding: 2rem 1rem 2rem 5rem;
+  min-width: 100%;
+  min-height: 100vh;
+  color: var(--white);
 }
 
 .title-input{
@@ -8,4 +10,14 @@
   color: var(--white);
   font-weight: 800;
   font-size: 2rem;
+}
+
+.table > thead >  tr{
+  display: flex;
+  gap: 1rem;
+}
+
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
 }

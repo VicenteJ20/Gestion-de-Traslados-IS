@@ -5,7 +5,7 @@ import { Input } from './Input'
 
 export const FormFormik = () => {
   const onSubmit = (values) => {
-    window.location.assign(`/ModelView/${values.factory}`)
+    window.location.assign(`/ModelView/${values.factory}+${values.winery}`)
   }
   return (
     <Formik

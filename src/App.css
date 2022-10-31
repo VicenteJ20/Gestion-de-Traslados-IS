@@ -1,9 +1,15 @@
-.App{
-  padding: 0 2rem 0 5rem;
-  display: flex;
+.ModelView.move-child,
+.History.move-child{
+  padding-left: 25rem;
   transition: all 0.4s linear;
 }
 
-.App.active-nav{
-  padding-left: 25rem;
+.ModelView,
+.History{
+  padding: 1rem 2rem 0 5rem;
+  transition: all 0.5s linear;
+}
+
+.App{
+  background-color: var(--dark-blue);
 }

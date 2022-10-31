@@ -2,12 +2,18 @@ import '../Styles/History.css'
 import historyData from '../JSON/history.json'
 import { HistoryCard } from './HistoryCard'
 import { Navbar } from './Navbar'
+import { useState } from 'react'
 
-export const History = ({ active, setupMenu }) => {
+export const History = () => {
+  const [active, setActive] = useState(false)
+
+  const setupMenu = () => {
+    setActive(!active)
+  }
   return (
     <>
       <Navbar active={active} setupMenu={setupMenu} />
-      <div className='History'>
+      <div className={`History ${active ? '' : 'move-child'}`}>
         <header className='history-header'>
           <h2>Modelos creados previamente</h2>
           <p>Para acceder a un modelo haga clic sobre el modelo escogido.</p>

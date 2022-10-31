@@ -10,7 +10,7 @@
   flex-direction: column;
   gap: 3rem;
   justify-content: center;
-  transition: all 0.7s linear;
+  transition: all 1s linear;
 }
 
 .Navbar.hide-nav{
