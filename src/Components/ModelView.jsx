@@ -1,6 +1,7 @@
 import '../Styles/ModelView.css'
 import { useState } from 'react'
 import { NavModel } from './NavModel'
+import { RenderValues } from './renderValues'
 
 const allDataTD = []
 
@@ -28,7 +29,6 @@ const TrBody = ({ winery, letter }) => {
         letter.map(x => <td key={x}>{getRandom(x)}</td>)
       }
       <td className='total-winery'>{getTotal(randomValues)}</td>
-
     </tr>
   )
 }
@@ -78,11 +78,11 @@ export const ModelView = () => {
           </thead>
           <tbody>
             {
-              wineryArray.map(x => <TrBody key={x} winery={cont++} letter={x} />)
+              wineryArray.map((x, index) => <TrBody key={index} winery={cont++} letter={x} />)
             }
             <tr className='results-column'>
               <th scope='row'>0</th>
-              {}
+              <RenderValues m={allDataTD} />
             </tr>
           </tbody>
         </table>

@@ -1,6 +1,6 @@
 .ModelView{
   padding: 2rem 1rem 2rem 5rem;
-  min-width: 100%;
+  width: 100vw;
   min-height: 100vh;
   color: var(--white);
   display: flex;
@@ -20,6 +20,7 @@
 .table-auto{
   max-width: 100%;
   height: 100%;
+  margin: 0 auto;
   border-spacing: 1rem;
   text-align: center;
 }
