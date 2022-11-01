@@ -2,17 +2,33 @@ import '../Styles/ModelView.css'
 import { useState } from 'react'
 import { NavModel } from './NavModel'
 
+const allDataTD = []
+
 const TrBody = ({ winery, letter }) => {
+  const randomValues = []
+
   function getRandom (val) {
     const randomValue = Math.floor(Math.random() * (25 - val)) + 1
-    return Math.floor(Math.random() * randomValue)
+    const newRandom = Math.floor(Math.random() * randomValue)
+    randomValues.push(newRandom)
+    return newRandom
   }
+
+  function getTotal (x) {
+    const total = x.reduce((a, b) => a + b, 0)
+    return total
+  }
+
+  allDataTD.push(randomValues)
+
   return (
     <tr>
-      <th scope='row'>{winery}</th>
+      <th scope='row'>{winery++}</th>
       {
         letter.map(x => <td key={x}>{getRandom(x)}</td>)
       }
+      <td className='total-winery'>{getTotal(randomValues)}</td>
+
     </tr>
   )
 }
@@ -37,10 +53,11 @@ for (let j = 0; j < row; j++) {
   wineryHeader.push(j + 1)
 }
 
-showFactories.push('END')
-showFactories.unshift('Bodega')
+showFactories.push('Fi')
+showFactories.unshift('In')
 
 export const ModelView = () => {
+  let cont = 1
   const [active, setActive] = useState(false)
 
   const setupMenu = () => {
@@ -51,24 +68,22 @@ export const ModelView = () => {
     <>
       <NavModel active={active} setupMenu={setupMenu} />
       <div className={`ModelView ${active ? '' : 'move-child'}`}>
-        <table className='Table-auto'>
+        <table className='table-auto'>
           <thead>
             <tr>
               {
-                showFactories.map(x => <th key={x}>{x}</th>)
+                showFactories.map(x => <th key={x} style={x === 'Fi' || x === 'In' ? { color: 'transparent', backgroundColor: 'var(--dark-blue)' } : {}}>{x}</th>)
               }
             </tr>
           </thead>
           <tbody>
             {
-              wineryArray.map(x => <TrBody key={x} winery={wineryHeader[wineryArray.indexOf(x)]} letter={x} />)
+              wineryArray.map(x => <TrBody key={x} winery={cont++} letter={x} />)
             }
-            {
-              console.table(wineryArray)
-            }
-            {
-              console.table(wineryHeader)
-            }
+            <tr className='results-column'>
+              <th scope='row'>0</th>
+              {}
+            </tr>
           </tbody>
         </table>
       </div>
