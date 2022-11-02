@@ -1,7 +1,8 @@
 import { Form, Formik } from 'formik'
-import { formSchema } from '../Schemas/form'
+import { formSchema } from '../Schemas/formModel'
 import '../Styles/form.css'
 import { Input } from './Input'
+import { Select } from './Select'
 
 export const FormFormik1 = () => {
   return (
@@ -18,16 +19,24 @@ export const FormFormik1 = () => {
       ({ isSubmitting }) => (
         <Form className='Form'>
           <div className='form-div factory-div'>
-            <Input label='Número de fábricas' name='factory' type='number' placeholder='N° Fábricas' />
+            <Select label='Método' name='method' placeholder='Seleccione un servicio'>
+              <option value=''>Seleccione un método</option>
+              <option value='Vogel'>Vogel</option>
+              <option value='Mín. Coste'>Mín. Coste</option>
+              <option value='NWC'>NWC</option>
+            </Select>
           </div>
           <div className='form-div winery-div'>
-            <Input label='Número de bodegas' name='winery' type='number' placeholder='N° Bodegas' />
+            <Input label='Asignación' name='asign' type='number' placeholder='Asignación' />
+          </div>
+          <div className='form-div winery-div'>
+            <Input label='Costo' name='costo' type='number' placeholder='Costo' />
           </div>
           <div className='button-div'>
-            <button className='btn submit-btn' disabled={isSubmitting} type='submit'>Generar modelo</button>
+            <button className='btn submit-btn' disabled={isSubmitting} type='submit'>Guardar y salir</button>
           </div>
           <div className='button-div'>
-            <button className='btn random-btn' type='button'>Generar modelo aleatorio</button>
+            <button className='btn random-btn' type='button'>Salir sin guardar</button>
           </div>
         </Form>
       )

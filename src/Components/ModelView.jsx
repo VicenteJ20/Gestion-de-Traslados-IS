@@ -54,7 +54,7 @@ export const ModelView = () => {
             <tr className='results-column'>
               <th scope='row' style={{ backgroundColor: 'var(--dark-blue)' }} />
               {
-                wineryArray.map((x, index) => <td key={index} className='result-card'>{contResult++}</td>)
+                rowInputs.map((x, index) => <td key={index} className='result-card'>{contResult++}</td>)
               }
             </tr>
           </tbody>
