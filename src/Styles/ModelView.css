@@ -1,6 +1,6 @@
 .ModelView{
   padding: 2rem 1rem 2rem 5rem;
-  width: 100vw;
+  width: 100%;
   min-height: 100vh;
   color: var(--white);
   display: flex;
@@ -59,4 +59,8 @@ tbody > tr > td{
 .total-winery{
   background-color: var(--dark-slate-blue);
   font-weight: 800;
+}
+
+.result-card{
+  background-color: var(--dark-orange);
 }

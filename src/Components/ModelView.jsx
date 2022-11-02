@@ -1,37 +1,7 @@
 import '../Styles/ModelView.css'
 import { useState } from 'react'
 import { NavModel } from './NavModel'
-import { RenderValues } from './renderValues'
-
-const allDataTD = []
-
-const TrBody = ({ winery, letter }) => {
-  const randomValues = []
-
-  function getRandom (val) {
-    const randomValue = Math.floor(Math.random() * (25 - val)) + 1
-    const newRandom = Math.floor(Math.random() * randomValue)
-    randomValues.push(newRandom)
-    return newRandom
-  }
-
-  function getTotal (x) {
-    const total = x.reduce((a, b) => a + b, 0)
-    return total
-  }
-
-  allDataTD.push(randomValues)
-
-  return (
-    <tr>
-      <th scope='row'>{winery++}</th>
-      {
-        letter.map(x => <td key={x}>{getRandom(x)}</td>)
-      }
-      <td className='total-winery'>{getTotal(randomValues)}</td>
-    </tr>
-  )
-}
+import { TrBody } from './TrBody'
 
 const factoryArray = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H']
 const showFactories = []
@@ -53,11 +23,12 @@ for (let j = 0; j < row; j++) {
   wineryHeader.push(j + 1)
 }
 
-showFactories.push('Fi')
-showFactories.unshift('In')
+showFactories.push(' ')
+showFactories.unshift(' ')
 
 export const ModelView = () => {
   let cont = 1
+  let contResult = 1
   const [active, setActive] = useState(false)
 
   const setupMenu = () => {
@@ -72,7 +43,7 @@ export const ModelView = () => {
           <thead>
             <tr>
               {
-                showFactories.map(x => <th key={x} style={x === 'Fi' || x === 'In' ? { color: 'transparent', backgroundColor: 'var(--dark-blue)' } : {}}>{x}</th>)
+                showFactories.map((x, index) => <th key={index} style={x === ' ' ? { color: 'transparent', backgroundColor: 'var(--dark-blue)' } : {}}>{x}</th>)
               }
             </tr>
           </thead>
@@ -81,8 +52,10 @@ export const ModelView = () => {
               wineryArray.map((x, index) => <TrBody key={index} winery={cont++} letter={x} />)
             }
             <tr className='results-column'>
-              <th scope='row'>0</th>
-              <RenderValues m={allDataTD} />
+              <th scope='row' style={{ backgroundColor: 'var(--dark-blue)' }} />
+              {
+                wineryArray.map((x, index) => <td key={index} className='result-card'>{contResult++}</td>)
+              }
             </tr>
           </tbody>
         </table>

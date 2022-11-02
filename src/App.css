@@ -1,6 +1,7 @@
 .ModelView.move-child,
 .History.move-child{
   padding-left: 25rem;
+  padding-right: 5rem;
   transition: all 0.4s linear;
 }
 
@@ -12,4 +13,11 @@
 
 .App{
   background-color: var(--dark-blue);
+  max-width: 100vw;
 }
+
+@media screen and (max-width: 1550px){
+  html{
+    font-size: 14px;
+  }
+} 
